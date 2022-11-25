@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, useRouteMatch } from "react-router-dom";
 import { selectCurrentUser, selectIsLoggedIn } from "../features/session/sessionSlice";
 import EditProfileForm from "./EditProfileForm";
 
