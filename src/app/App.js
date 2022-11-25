@@ -18,6 +18,12 @@ function App() {
     <Router>
       <Header />
       <main>
+        <Route path="/articles/:title"> {/* Creates dynamic routes */}
+          <Article />
+        </Route>
+        <Route path="/authors/:name">
+          <Author />
+        </Route>
         <Route path="/about">
           <About /> 
         </Route>

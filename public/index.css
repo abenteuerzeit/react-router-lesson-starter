@@ -1,5 +1,6 @@
 :root {
   --primary-color: #67b1c6;
+  --secondary-color: #c667b0;
 }
 
 html,
@@ -21,6 +22,7 @@ a {
 
 .header a.active {
   font-weight: bold;
+  color: var(--secondary-color);
 }
 
 .header {
