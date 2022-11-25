@@ -2,23 +2,22 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectArticles, filterArticles } from "../features/articles/articlesSlice";
 import Search from "./Search";
-
-// Import Link from React Router
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Articles () {
   const articles = useSelector(selectArticles)
   
-  // grab the search value from useLocation()
+  const { search } = useLocation();  
   
-  // get the queryParams from new URLSearchParams() 
+  const queryParams = new URLSearchParams(search);
   
-  const title = '' // <-- fix me!
+  const title = queryParams.get('title');
   
   const filteredArticles = title ? filterArticles(title, articles) : Object.values(articles)
 
   return (
-    <main>
+    <main>      
+    <Search />
       <h1>Articles</h1>
       <ul>
         { 
@@ -33,7 +32,6 @@ export default function Articles () {
           })
         }
       </ul>
-      <Search />
     </main>
   )
 }
